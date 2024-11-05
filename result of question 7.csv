@@ -1,0 +1,17 @@
+airline,class,AvgSeatComfort,AvgFoodnBeverages,AvgInflightEntertainment,AvgValueForMoney,AvgOverallRating,season
+"Singapore Airlines","Business Class",3.6531,3.6122,4.0136,3.5986,7.0612,non-seasonal
+"Singapore Airlines","Economy Class",3.7324,3.5523,3.9100,3.4234,6.3747,non-seasonal
+"Singapore Airlines","Premium Economy",3.6140,3.4386,3.8070,2.9298,5.6667,non-seasonal
+"Singapore Airlines","Premium Economy",3.5385,3.6154,4.2308,2.8846,6.0000,seasonal
+"Singapore Airlines","Economy Class",3.6242,3.4970,3.8000,3.4970,6.6364,seasonal
+"Singapore Airlines","Business Class",3.5714,3.4048,3.7500,3.8929,7.5595,seasonal
+"Singapore Airlines","First Class",3.7273,3.5455,4.4545,4.5455,9.2727,non-seasonal
+"Singapore Airlines","First Class",4.0000,4.0000,2.5000,5.0000,10.0000,seasonal
+"Qatar Airways","Economy Class",3.9841,4.2024,4.2659,3.8492,7.2738,non-seasonal
+"Qatar Airways","Business Class",4.1139,4.0696,4.2911,3.7532,7.2911,non-seasonal
+"Qatar Airways","First Class",4.0000,4.0000,4.1111,3.8889,9.3333,non-seasonal
+"Qatar Airways","Business Class",4.0704,3.8592,4.1268,3.7183,7.5211,seasonal
+"Qatar Airways","Economy Class",3.9153,3.9266,4.1977,3.4802,6.6158,seasonal
+"Qatar Airways","First Class",4.0000,2.5000,4.5000,3.2500,6.7500,seasonal
+"Qatar Airways","Premium Economy",4.0000,5.0000,2.0000,5.0000,10.0000,seasonal
+"Qatar Airways","Premium Economy",3.7500,4.0000,3.5000,5.0000,10.0000,non-seasonal
