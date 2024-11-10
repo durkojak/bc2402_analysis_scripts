@@ -18,23 +18,10 @@ for airline in airlines:
     plt.title(f'Average Overall Rating by Class for {airline}')
     plt.ylabel('Average Overall Rating')
     plt.xlabel('Class')
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=45, ha='right') 
     plt.legend(title='Season')
+    plt.tight_layout()  
     plt.show()
-
-seasonal_comparison_data = df.groupby(['airline', 'season']).agg({
-    'AvgOverallRating': 'mean'
-}).reset_index()
-
-pivot_data = seasonal_comparison_data.pivot(index='airline', columns='season', values='AvgOverallRating').reset_index()
-
-pivot_data.plot(kind='bar', x='airline', figsize=(14, 8))
-plt.title('Average Overall Rating: Seasonal vs Non-Seasonal for Each Airline')
-plt.ylabel('Average Overall Rating')
-plt.xlabel('Airline')
-plt.xticks(rotation=45)
-plt.legend(title='Season')
-plt.show()
 
 rating_columns = ['AvgSeatComfort', 'AvgFoodnBeverages', 'AvgInflightEntertainment', 'AvgValueForMoney', 'AvgOverallRating']
 
@@ -49,3 +36,26 @@ plt.subplots_adjust(bottom=0.3)
 plt.xticks(rotation=0)
 
 plt.show()
+
+
+for column in rating_columns:
+    plt.figure(figsize=(12, 6))
+    sns.barplot(x='airline', y=column, hue='season', data=df, ci=None)
+    plt.title(f'{column} by Airline and Season')
+    plt.ylabel(column)
+    plt.xlabel('Airline')
+    plt.xticks(rotation=45, ha='right')  
+    plt.legend(title='Season')
+    plt.tight_layout()  
+    
+    
+    if column == 'AvgOverallRating':
+        plt.ylim(0, 10)
+    else:
+        plt.ylim(0, 5)
+    
+    for container in plt.gca().containers:
+        plt.setp(container, width=0.25)
+    
+    plt.show()
+
