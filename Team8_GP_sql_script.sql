@@ -43,6 +43,7 @@ left join
 order by 
     q1.year, q1.quarter;
     
+    
 -- Durkovic Jakub
 #6. For each sales_channel and each route, display the following ratios
 #      -	average length_of_stay / average flight_hour 
@@ -55,7 +56,13 @@ order by
 select sales_channel, route, round(avg(length_of_stay) / avg(flight_hour), 2) as LengthOfStay, round( avg(wants_extra_baggage) / avg(flight_hour),2) as WantsExtraBaggage, round( avg(wants_preferred_seat) / avg(flight_hour),2) as PrefSeat, round(avg(wants_in_flight_meals) / avg(flight_hour),2) as WantsMeals from customer_booking
 	group by sales_channel, route
     order by sales_channel asc, LengthOfStay desc;
+    
 
+-- based on consultation I'm providing also a version where we divide it by average flight duration so it makes more sense for the analysis
+select sales_channel, route,avg(flight_duration) as AverageFlightDuration ,round(avg(length_of_stay) / avg(flight_duration), 2) as LengthOfStay, round( avg(wants_extra_baggage) / avg(flight_duration),2) as WantsExtraBaggage, round( avg(wants_preferred_seat) / avg(flight_duration),2) as PrefSeat, round(avg(wants_in_flight_meals) / avg(flight_duration),2) as WantsMeals from customer_booking
+	group by sales_channel, route
+    order by sales_channel asc, LengthOfStay desc;    
+    
 -- Durkovic Jakub
 # 7.Airline seasonality.
 #For each Airline and Class, display the averages of SeatComfort, FoodnBeverages, InflightEntertainment,
